@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{121129DA-D274-4ED3-BD2D-4272A06B6C36}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Empeek.DataTransferLayer.Services.Instant</RootNamespace>
+    <AssemblyName>Empeek.DataTransferLayer.Services.Instant</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Instant\CategoryDTOService.cs" />
+    <Compile Include="Instant\ItemDTOService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Empeek.DataAccessLayer\Empeek.DataAccessLayer.csproj">
+      <Project>{e7400615-9038-48ce-8b8e-48d8e738c53b}</Project>
+      <Name>Empeek.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Empeek.DataTransferLayer.Services\Empeek.DataTransferLayer.Services.Common.csproj">
+      <Project>{ACD4F544-2EFF-41B2-974F-73058EDB72D0}</Project>
+      <Name>Empeek.DataTransferLayer.Services.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Empeek.DataTransferLayer\Empeek.DataTransferLayer.csproj">
+      <Project>{49896069-9970-4d8f-96a5-e31ed549709c}</Project>
+      <Name>Empeek.DataTransferLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Empeek.RepositoriesCommon\Empeek.RepositoriesCommon.csproj">
+      <Project>{b3d5ca7f-fcc6-47f2-9d7c-4d098eb31b9d}</Project>
+      <Name>Empeek.RepositoriesCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Empeek.RepositoriesInstantEntity\Empeek.RepositoriesInstantEntity.csproj">
+      <Project>{20F3DFCF-F55F-4FE6-8DBB-D766A8EC9D48}</Project>
+      <Name>Empeek.RepositoriesInstantEntity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
